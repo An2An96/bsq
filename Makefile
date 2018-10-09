@@ -11,9 +11,15 @@
 #******************************************************************************#
 
 NAME=bsq
-SRCS=srcs/main.c srcs/ft_find_biggest_square.c
+SRCS=srcs/main.c srcs/ft_putstr.c srcs/ft_validate.c srcs/ft_find_biggest_square.c
+INCLUDES=includes
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror $(SRCS) -o $(NAME)
+	gcc -Wall -Wextra -Werror -I$(INCLUDES) $(SRCS) -o $(NAME)
+
+fclean:
+	rm -f $(NAME)
+
+re: fclean all

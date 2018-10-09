@@ -1,68 +1,16 @@
-char g_empty;
-char g_obstacle;
-char g_full;
-int	g_nbr; // nbr == height
-
-
-// int		ft_strlen(char *str)
-// {
-// 	int lenght;
-
-// 	lenght = 0;
-// 	while (str[lenght] != '\0')
-// 	{
-// 		if str[lenght] 
-	
-	
-// 		lenght++;
-// 	}
-// 	return (lenght);
-
-
-// }
-
-
-// int	ft_valid_height(char *str, int *width, int *height)
-// {
-// 	int i;
-// 	int width_temp;
-
-// 	i = 0;
-// 	width_temp = 0;
-// 	*width = 0;
-// 	*height = 0;
-// 	while (str[i] != '\0')
-// 	{
-// 		if (str[i] == '\n')
-// 		{
-// 			if (*width == 0)
-// 				*width = width_temp;
-// 			else if (*width != width_temp)
-// 				return (0);
-// 			width_temp = 0;
-// 		}
-// 		else
-// 		{
-// 			if (width_temp++ == 0)
-// 				(*height)++;
-// 		}
-// 		i++;
-// 	}
-// 	return (1);
-// }
-
+#include "read.h"
 
 int	ft_valid_first_line(char *str)
 {
 	int i;
 
 	i = 0;
-	if (str[i] >= '9' || str[i] <= '0')
-		return(0);
-	while (str[i] != '\n' && (str[i] >= '0') && (str[i] <= '9'))
+	if (!(str[i] >= '0' && str[i] <= '9'))
+		return (0);
+	while (str[i] != '\n' && (str[i] >= '0' && str[i] <= '9'))
 	{
-		g_nbr *= 10;
-		g_nbr += (int)str[i] - '0';
+		g_size[1] *= 10;
+		g_size[1] += (int)str[i] - '0';
 		i++;
 	}
 	g_empty = str[i++];
@@ -73,90 +21,135 @@ int	ft_valid_first_line(char *str)
 
 int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_count)
 {
+	//printf("ft_validate %s, height = %d\n", str, *height);
 	int i;
 	int width_temp;
 
 	i = 0;
-	if (*height == 0)
+	if (*pos == 0 && *height == 0)
 	{
 		i = ft_valid_first_line(str);
+		//printf("ft_valid_first_line return %d\n", i);
 		if (i == 0)
 		{
 			return (0);
 		}
 	}
+	width_temp = (*pos);
 	while (str[i] != '\0')
 	{
+		//printf("while %c\n", str[i]);
 		if (str[i] != '\n')
+		{
+			if (str[i] == g_obstacle)
+				obstacle_count++;
+			else if (str[i] != g_empty)
+			{
+				//printf("сань хуй соси\n");
+				return (0);
+			}
 			width_temp++;
+		}
 		else if (str[i] == '\n')
 		{
 			if (*height == 0)
 			{
 				*width = width_temp;
 			}
-			else if (width_temp == *width)
+			else if (width_temp != *width)
 			{
+				//printf("%d %d\n", width_temp, *width);
 				return (0);
 			}
 			width_temp = 0;
-			height++;
+			(*height)++;
 		}
-		else if (str[i] == g_obstacle)
-			obstacle_count++;
-		else if (str[i] != g_empty)
-			return (0);
 		i++;
 	}
+	(*pos) = width_temp;
+	printf("ft_valid_first_line, pos = %d\n", *pos);
 	return (1);
 }
 
-void	ft_display_file(char *name)
+void	ft_read_obstacles_map(char *str, int *height, int *pos, int *map_idx)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '\n')
+		{
+			(*height)++;
+		}
+		else if (*height > 0)
+		{
+			if (str[i] == g_obstacle)
+			{
+				//printf("%d %d\n", *map_idx, *pos);
+				g_obstacle_map[(*map_idx)++] = *pos;
+			}
+			(*pos)++;
+		}
+		i++;
+	}
+	g_obstacle_map[*map_idx] = END_ARRAY;
+}
+
+void	ft_read_file(char *name, int type_read)
 {
 	int		fd;
 	int		read_length;
 	char	buf[BUFFER_SIZE];
+
+	int width;
+	int height;
+	int pos;
+	int obstacle_count;
+	int map_idx;
 
 	if ((fd = open(name, O_RDONLY)) == -1)
 	{
 		ft_putstr("Error open file.\n");
 		return ;
 	}
+	width = 0;
+	height = 0;
+	pos = 0;
+	obstacle_count = 0;
+	map_idx = 0;
 	while ((read_length = read(fd, buf, BUFFER_SIZE)))
 	{
+		//write(1, "test\n", 5);
 		buf[read_length] = '\0';
-		if (ft_validate(char *str, &width, &height, &pos, &obstacle_count) == 0)
-		{	
-			ft_putstr("Error validate.\n");
-			return (0);
-		}
-		if (read_size < 32 && g_nbr != height)
+		if (type_read == READ_VALIDATE)
 		{
-			ft_putstr("Error height.\n");
-			return (0);
+			if (ft_validate(buf, &width, &height, &pos, &obstacle_count) == 0)
+			{
+				ft_putstr("Error validate.\n");
+				exit(0);
+				//return ;
+			}
+			if (read_length < BUFFER_SIZE)
+			{
+				if (g_size[1] != height)
+				{
+					//printf("%d %d\n", g_size[1], height);
+					ft_putstr("Error height.\n");
+					exit(0);
+					//return ;
+				}
+				g_size[0] = width;
+				g_size[1] = height;
+				
+				g_obstacle_map = malloc(obstacle_count + 1 * sizeof(int));
+			}
 		}
-		ft_putstr(buf);
+		else if (type_read == READ_CONSIDER)
+		{
+			ft_read_obstacles_map(buf, &height, &pos, &map_idx);
+		}
 	}
 	if (close(fd) == -1 && fd == 3)
 		ft_putstr("Failed closing");
 }
-
-// int		main(int argc, char **argv)
-// {
-// 	if (argc < 2)
-// 		ft_putstr("File name missing.\n");
-// 	else if (argc > 2)
-// 		ft_putstr("Too many arguments.\n");
-// 	else
-// 		ft_display_file(argv[1]);
-// 	return (0);
-// }
-
-// int	main()
-// {
-// 	while(read_size = read(...))
-// 	{
-		
-// 		}
-// 	}
-// }
