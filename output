@@ -13,33 +13,44 @@ ft_valid_first_line, pos = 0
 	test: start_pos = 0, square_size = 9, field width = 27
 	point 31 inside square 0 - 224
 		ft_reduce_square: obstacle (4, 1), start (0, 0)
-		diff = 1
-		end pos = 0
-	new pos square: 0, size: -1
-	test: start_pos = 0, square_size = 1, field width = 27
-	test: start_pos = 0, square_size = 1, field width = 27
-	test: start_pos = 0, square_size = 1, field width = 27
-	test: start_pos = 0, square_size = 1, field width = 27
-	test: start_pos = 0, square_size = 1, field width = 27
-	test: start_pos = 0, square_size = 1, field width = 27
-	Big size: 1
+		diff = 4
+		end pos = 84
+	new pos square: 84, size: -1
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	test: start_pos = 0, square_size = 4, field width = 27
+	Big size: 4
 =======================
 right pos: 5
 	====== ft_is_biggest_square ======
 	22 < 9?
 	test: start_pos = 5, square_size = 9, field width = 27
 	test: start_pos = 5, square_size = 9, field width = 27
-	point 67 inside square 5 - 229
-		ft_reduce_square: obstacle (13, 2), start (5, 0)
-		diff = 2
-		end pos = 33
-	new pos square: 33, size: -1
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	Big size: 2
+	point 66 inside square 5 - 229
+		ft_reduce_square: obstacle (12, 2), start (5, 0)
+		diff = 7
+		end pos = 173
+	new pos square: 173, size: -1
+	test: start_pos = 5, square_size = 7, field width = 27
+	test: start_pos = 5, square_size = 7, field width = 27
+	test: start_pos = 5, square_size = 7, field width = 27
+	test: start_pos = 5, square_size = 7, field width = 27
+	point 170 inside square 5 - 173
+		ft_reduce_square: obstacle (8, 6), start (5, 0)
+		diff = 6
+		end pos = 145
+	new pos square: 145, size: -1
+	test: start_pos = 5, square_size = 6, field width = 27
+	test: start_pos = 5, square_size = 6, field width = 27
+	test: start_pos = 5, square_size = 6, field width = 27
+	test: start_pos = 5, square_size = 6, field width = 27
+	Big size: 6
 =======================
 down pos: 54
 	====== ft_is_biggest_square ======
@@ -47,16 +58,59 @@ down pos: 54
 	test: start_pos = 54, square_size = 7, field width = 27
 	test: start_pos = 54, square_size = 7, field width = 27
 	test: start_pos = 54, square_size = 7, field width = 27
+	test: start_pos = 54, square_size = 7, field width = 27
 	point 112 inside square 54 - 222
 		ft_reduce_square: obstacle (4, 4), start (0, 2)
+		diff = 4
+		end pos = 138
+	new pos square: 138, size: -1
+	test: start_pos = 54, square_size = 4, field width = 27
+	test: start_pos = 54, square_size = 4, field width = 27
+	test: start_pos = 54, square_size = 4, field width = 27
+	test: start_pos = 54, square_size = 4, field width = 27
+	test: start_pos = 54, square_size = 4, field width = 27
+	test: start_pos = 54, square_size = 4, field width = 27
+	Big size: 4
+=======================
+right pos: 13
+	====== ft_is_biggest_square ======
+	14 < 9?
+	test: start_pos = 13, square_size = 9, field width = 27
+	test: start_pos = 13, square_size = 9, field width = 27
+	test: start_pos = 13, square_size = 9, field width = 27
+	point 67 inside square 13 - 237
+		ft_reduce_square: obstacle (13, 2), start (13, 0)
 		diff = 2
-		end pos = 82
-	new pos square: 82, size: -1
-	test: start_pos = 54, square_size = 2, field width = 27
-	test: start_pos = 54, square_size = 2, field width = 27
-	test: start_pos = 54, square_size = 2, field width = 27
-	test: start_pos = 54, square_size = 2, field width = 27
+		end pos = 41
+	new pos square: 41, size: -1
+	test: start_pos = 13, square_size = 2, field width = 27
+	test: start_pos = 13, square_size = 2, field width = 27
+	test: start_pos = 13, square_size = 2, field width = 27
+	test: start_pos = 13, square_size = 2, field width = 27
+	test: start_pos = 13, square_size = 2, field width = 27
+	test: start_pos = 13, square_size = 2, field width = 27
+	test: start_pos = 13, square_size = 2, field width = 27
 	Big size: 2
+=======================
+down pos: 81
+	====== ft_is_biggest_square ======
+	27 < 6?
+	test: start_pos = 81, square_size = 6, field width = 27
+	test: start_pos = 81, square_size = 6, field width = 27
+	test: start_pos = 81, square_size = 6, field width = 27
+	test: start_pos = 81, square_size = 6, field width = 27
+	point 112 inside square 81 - 221
+		ft_reduce_square: obstacle (4, 4), start (0, 3)
+		diff = 4
+		end pos = 165
+	new pos square: 165, size: -1
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	Big size: 4
 =======================
 right pos: 14
 	====== ft_is_biggest_square ======
@@ -65,15 +119,18 @@ right pos: 14
 	test: start_pos = 14, square_size = 9, field width = 27
 	test: start_pos = 14, square_size = 9, field width = 27
 	test: start_pos = 14, square_size = 9, field width = 27
+	test: start_pos = 14, square_size = 9, field width = 27
 	point 150 inside square 14 - 238
 		ft_reduce_square: obstacle (15, 5), start (14, 0)
-		diff = 1
-		end pos = 14
-	new pos square: 14, size: -1
-	test: start_pos = 14, square_size = 1, field width = 27
-	test: start_pos = 14, square_size = 1, field width = 27
-	test: start_pos = 14, square_size = 1, field width = 27
-	Big size: 1
+		diff = 5
+		end pos = 126
+	new pos square: 126, size: -1
+	test: start_pos = 14, square_size = 5, field width = 27
+	test: start_pos = 14, square_size = 5, field width = 27
+	test: start_pos = 14, square_size = 5, field width = 27
+	test: start_pos = 14, square_size = 5, field width = 27
+	test: start_pos = 14, square_size = 5, field width = 27
+	Big size: 5
 =======================
 down pos: 81
 	====== ft_is_biggest_square ======
@@ -81,33 +138,44 @@ down pos: 81
 	test: start_pos = 81, square_size = 6, field width = 27
 	test: start_pos = 81, square_size = 6, field width = 27
 	test: start_pos = 81, square_size = 6, field width = 27
+	test: start_pos = 81, square_size = 6, field width = 27
 	point 112 inside square 81 - 221
 		ft_reduce_square: obstacle (4, 4), start (0, 3)
-		diff = 1
-		end pos = 81
-	new pos square: 81, size: -1
-	test: start_pos = 81, square_size = 1, field width = 27
-	test: start_pos = 81, square_size = 1, field width = 27
-	test: start_pos = 81, square_size = 1, field width = 27
-	test: start_pos = 81, square_size = 1, field width = 27
-	Big size: 1
+		diff = 4
+		end pos = 165
+	new pos square: 165, size: -1
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	test: start_pos = 81, square_size = 4, field width = 27
+	Big size: 4
 =======================
 right pos: 5
 	====== ft_is_biggest_square ======
 	22 < 9?
 	test: start_pos = 5, square_size = 9, field width = 27
 	test: start_pos = 5, square_size = 9, field width = 27
-	point 67 inside square 5 - 229
-		ft_reduce_square: obstacle (13, 2), start (5, 0)
-		diff = 2
-		end pos = 33
-	new pos square: 33, size: -1
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	test: start_pos = 5, square_size = 2, field width = 27
-	Big size: 2
+	point 66 inside square 5 - 229
+		ft_reduce_square: obstacle (12, 2), start (5, 0)
+		diff = 7
+		end pos = 173
+	new pos square: 173, size: -1
+	test: start_pos = 5, square_size = 7, field width = 27
+	test: start_pos = 5, square_size = 7, field width = 27
+	test: start_pos = 5, square_size = 7, field width = 27
+	test: start_pos = 5, square_size = 7, field width = 27
+	point 170 inside square 5 - 173
+		ft_reduce_square: obstacle (8, 6), start (5, 0)
+		diff = 6
+		end pos = 145
+	new pos square: 145, size: -1
+	test: start_pos = 5, square_size = 6, field width = 27
+	test: start_pos = 5, square_size = 6, field width = 27
+	test: start_pos = 5, square_size = 6, field width = 27
+	test: start_pos = 5, square_size = 6, field width = 27
+	Big size: 6
 =======================
 down pos: 135
 	====== ft_is_biggest_square ======
@@ -118,13 +186,16 @@ down pos: 135
 	test: start_pos = 135, square_size = 4, field width = 27
 	test: start_pos = 135, square_size = 4, field width = 27
 	test: start_pos = 135, square_size = 4, field width = 27
+	test: start_pos = 135, square_size = 4, field width = 27
+	test: start_pos = 135, square_size = 4, field width = 27
+	test: start_pos = 135, square_size = 4, field width = 27
 	point 218 inside square 135 - 219
 		ft_reduce_square: obstacle (2, 8), start (0, 5)
-		diff = 2
-		end pos = 163
-	new pos square: 163, size: -1
-	test: start_pos = 135, square_size = 2, field width = 27
-	Big size: 2
+		diff = 3
+		end pos = 191
+	new pos square: 191, size: -1
+	test: start_pos = 135, square_size = 3, field width = 27
+	Big size: 3
 =======================
 right pos: 16
 	====== ft_is_biggest_square ======
@@ -134,18 +205,24 @@ right pos: 16
 	test: start_pos = 16, square_size = 9, field width = 27
 	test: start_pos = 16, square_size = 9, field width = 27
 	test: start_pos = 16, square_size = 9, field width = 27
-	point 210 inside square 16 - 240
-		ft_reduce_square: obstacle (21, 7), start (16, 0)
-		diff = 5
-		end pos = 128
-	new pos square: 128, size: -1
-	test: start_pos = 16, square_size = 5, field width = 27
-	test: start_pos = 16, square_size = 5, field width = 27
-	Big size: 5
+	test: start_pos = 16, square_size = 9, field width = 27
+	test: start_pos = 16, square_size = 9, field width = 27
+	point 184 inside square 16 - 240
+		ft_reduce_square: obstacle (22, 6), start (16, 0)
+		diff = 6
+		end pos = 156
+	new pos square: 156, size: -1
+	test: start_pos = 16, square_size = 6, field width = 27
+	test: start_pos = 16, square_size = 6, field width = 27
+	test: start_pos = 16, square_size = 6, field width = 27
+	Big size: 6
 =======================
 down pos: 162
 	====== ft_is_biggest_square ======
 	27 < 3?
+	test: start_pos = 162, square_size = 3, field width = 27
+	test: start_pos = 162, square_size = 3, field width = 27
+	test: start_pos = 162, square_size = 3, field width = 27
 	test: start_pos = 162, square_size = 3, field width = 27
 	test: start_pos = 162, square_size = 3, field width = 27
 	test: start_pos = 162, square_size = 3, field width = 27
@@ -160,9 +237,104 @@ down pos: 162
 	test: start_pos = 162, square_size = 2, field width = 27
 	Big size: 2
 =======================
-right pos: 22
+right pos: 9
 	====== ft_is_biggest_square ======
+	18 < 9?
+	test: start_pos = 9, square_size = 9, field width = 27
+	test: start_pos = 9, square_size = 9, field width = 27
+	point 66 inside square 9 - 233
+		ft_reduce_square: obstacle (12, 2), start (9, 0)
+		diff = 3
+		end pos = 65
+	new pos square: 65, size: -1
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	test: start_pos = 9, square_size = 3, field width = 27
+	Big size: 3
+=======================
+down pos: 189
+	====== ft_is_biggest_square ======
+	27 < 2?
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	Big size: 2
+=======================
+right pos: 23
+	====== ft_is_biggest_square ======
+	4 < 9?
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	test: start_pos = 23, square_size = 4, field width = 27
+	Big size: 4
+=======================
+down pos: 189
+	====== ft_is_biggest_square ======
+	27 < 2?
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	test: start_pos = 189, square_size = 2, field width = 27
+	Big size: 2
+=======================
+right pos: 22
+	====== ft_is_bigge
+
+
+
+o
+x
+x
+
+
+
+
+
+o
+o
+
+
+
+
+
+
+
+
+
+
+
+
+
+st_square ======
 	5 < 9?
+	test: start_pos = 22, square_size = 5, field width = 27
+	test: start_pos = 22, square_size = 5, field width = 27
+	test: start_pos = 22, square_size = 5, field width = 27
 	test: start_pos = 22, square_size = 5, field width = 27
 	test: start_pos = 22, square_size = 5, field width = 27
 	test: start_pos = 22, square_size = 5, field width = 27
@@ -175,6 +347,9 @@ right pos: 22
 down pos: 216
 	====== ft_is_biggest_square ======
 	27 < 1?
+	test: start_pos = 216, square_size = 1, field width = 27
+	test: start_pos = 216, square_size = 1, field width = 27
+	test: start_pos = 216, square_size = 1, field width = 27
 	test: start_pos = 216, square_size = 1, field width = 27
 	test: start_pos = 216, square_size = 1, field width = 27
 	test: start_pos = 216, square_size = 1, field width = 27
@@ -199,6 +374,9 @@ right pos: 3
 	test: start_pos = 3, square_size = 1, field width = 27
 	test: start_pos = 3, square_size = 1, field width = 27
 	test: start_pos = 3, square_size = 1, field width = 27
+	test: start_pos = 3, square_size = 1, field width = 27
+	test: start_pos = 3, square_size = 1, field width = 27
+	test: start_pos = 3, square_size = 1, field width = 27
 	Big size: 1
 =======================
 right pos: 11
@@ -206,8 +384,8 @@ right pos: 11
 	16 < 9?
 	test: start_pos = 11, square_size = 9, field width = 27
 	test: start_pos = 11, square_size = 9, field width = 27
-	point 67 inside square 11 - 235
-		ft_reduce_square: obstacle (13, 2), start (11, 0)
+	point 66 inside square 11 - 235
+		ft_reduce_square: obstacle (12, 2), start (11, 0)
 		diff = 2
 		end pos = 39
 	new pos square: 39, size: -1
@@ -216,6 +394,9 @@ right pos: 11
 	test: start_pos = 11, square_size = 2, field width = 27
 	test: start_pos = 11, square_size = 2, field width = 27
 	test: start_pos = 11, square_size = 2, field width = 27
+	test: start_pos = 11, square_size = 2, field width = 27
+	test: start_pos = 11, square_size = 2, field width = 27
+	test: start_pos = 11, square_size = 2, field width = 27
 	Big size: 2
 =======================
-BIG SIZE: 5
+BIG SIZE: 6, START POS: 5

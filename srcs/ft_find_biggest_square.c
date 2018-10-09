@@ -40,7 +40,7 @@ int    ft_reduce_square(int field_size[2], int obstacle_pos, int start_pos, int 
 
     printf("\t\tft_reduce_square: obstacle (%d, %d), start (%d, %d)\n", obstacle[0], obstacle[1], start[0], start[1]);
 
-    if ((obstacle[0] - start[0]) < (obstacle[1] - start[1]))
+    if ((obstacle[0] - start[0]) > (obstacle[1] - start[1]))
         diff = obstacle[0] - start[0];
     else
         diff = obstacle[1] - start[1];
@@ -111,13 +111,54 @@ int     ft_get_offset_down(int field_size[2], int obstacle_pos)
         return (-1);
 }
 
-int    ft_find_biggest_square(int *obstacle_map, int field_size[2])
+void    ft_display_result(int *obstacle_map, int field_size[2], int biggest_start, int big_size)
+{
+    int x;
+    int y;
+    int obs_idx;
+
+    printf("start %d, size %d\n", biggest_start, big_size);
+    int r_x_min = biggest_start % field_size[0];
+    int r_y_min = biggest_start / field_size[0];
+    int r_x_max = (r_x_min + big_size - 1);
+    int r_y_max = (r_y_min + big_size - 1);
+
+    y = 0;
+    obs_idx = 0;
+    printf("min: (%d, %d), max: (%d, %d)\n", r_x_min, r_y_min, r_x_max, r_y_max);
+    printf("field: %d %d", field_size[0], field_size[1]);
+    while (y < field_size[1])
+    {
+        x = 0;
+        while (x < field_size[0])
+        {
+            if (obstacle_map[obs_idx] == y * field_size[0] + x)
+            {
+                ft_putchar('o');
+                obs_idx++;
+            }
+            else if (x >= r_x_min && x <= r_x_max && y >= r_y_min && y <= r_y_max)
+            {
+                ft_putchar('x');
+            }
+            else
+                ft_putchar('.');
+            x++;
+        }
+        ft_putchar('\n');
+        y++;
+    }
+}
+
+int     ft_find_biggest_square(int *obstacle_map, int field_size[2])
 {
     printf("====== ft_find_biggest_square ======\n");
     int i;
     int cur_pos;
     int cur_size;
     int big_size;
+
+    int biggest_start;
 
     i = 0;
     big_size = ft_is_biggest_square(obstacle_map, field_size, 0);
@@ -129,16 +170,24 @@ int    ft_find_biggest_square(int *obstacle_map, int field_size[2])
             cur_size = ft_is_biggest_square(obstacle_map, field_size, cur_pos);    
         }
         if (cur_size > big_size)
+        {
             big_size = cur_size;
+            biggest_start = cur_pos;
+        }
         if ((cur_pos = ft_get_offset_down(field_size, obstacle_map[i])) != -1)
         {
             printf("down pos: %d\n", cur_pos);
             cur_size = ft_is_biggest_square(obstacle_map, field_size, cur_pos);
         }
         if (cur_size > big_size)
+        {
             big_size = cur_size;
+            biggest_start = cur_pos;
+        }
         i++;
     }
-    printf("BIG SIZE: %d\n", big_size);
+    printf("BIG SIZE: %d, START POS: %d\n", big_size, biggest_start);
+
+    ft_display_result(obstacle_map, field_size, biggest_start, big_size);
     return (big_size);
 }
