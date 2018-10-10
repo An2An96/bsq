@@ -42,7 +42,8 @@ void	ft_display_result(int *obstacle_map,
 		x = -1;
 		while (++x >= 0 && x < field_size[0])
 		{
-			ft_print_char((obstacle_map[obs_idx] == y * field_size[0] + x && ++obs_idx),
+			ft_print_char((obstacle_map[obs_idx] == y * field_size[0] + x
+				&& ++obs_idx),
 				(x >= square_min[0] && x <= square_max[0]
 				&& y >= square_min[1] && y <= square_max[1]));
 		}

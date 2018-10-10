@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/10 16:56:03 by rschuppe          #+#    #+#             */
+/*   Updated: 2018/10/10 16:56:04 by rschuppe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef READ_H
 # define READ_H
 
@@ -17,10 +29,10 @@ char	g_empty;
 char	g_obstacle;
 char	g_full;
 int		g_nbr;
-int     g_size[2];
+int		g_size[2];
 
 int		*g_obstacle_map;
 
-void    ft_read_file(char *name, int type_read);
+void	ft_read_file(char *name, int type_read);
 
 #endif

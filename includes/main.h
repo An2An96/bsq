@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/10 16:53:45 by rschuppe          #+#    #+#             */
+/*   Updated: 2018/10/10 16:53:46 by rschuppe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MAIN_H
 # define MAIN_H
 
@@ -6,9 +18,6 @@
 
 # include "read.h"
 # include "utils.h"
-
-//# define GET_CELL_VAL(field, pos)   ((field[pos / 8] >> (8 - pos % 8 - 1)) & 1)
-
-int		ft_find_biggest_square(int *obstacle_map, int field_size[2]);
+# include "bsq.h"
 
 #endif
