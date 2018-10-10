@@ -21,7 +21,6 @@ int	ft_valid_first_line(char *str)
 
 int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_count)
 {
-	////printf("ft_validate %s, height = %d\n", str, *height);
 	int i;
 	int width_temp;
 
@@ -29,7 +28,6 @@ int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_coun
 	if (*pos == 0 && *height == 0)
 	{
 		i = ft_valid_first_line(str);
-		////printf("ft_valid_first_line return %d\n", i);
 		if (i == 0)
 		{
 			return (0);
@@ -38,36 +36,26 @@ int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_coun
 	width_temp = (*pos);
 	while (str[i] != '\0')
 	{
-		////printf("while %c\n", str[i]);
 		if (str[i] != '\n')
 		{
 			if (str[i] == g_obstacle)
 				obstacle_count++;
 			else if (str[i] != g_empty)
-			{
-				////printf("сань хуй соси\n");
 				return (0);
-			}
 			width_temp++;
 		}
 		else if (str[i] == '\n')
 		{
 			if (*height == 0)
-			{
 				*width = width_temp;
-			}
 			else if (width_temp != *width)
-			{
-				////printf("%d %d\n", width_temp, *width);
 				return (0);
-			}
 			width_temp = 0;
 			(*height)++;
 		}
 		i++;
 	}
 	(*pos) = width_temp;
-	//printf("ft_valid_first_line, pos = %d\n", *pos);
 	return (1);
 }
 
@@ -119,7 +107,6 @@ void	ft_read_file(char *name, int type_read)
 	map_idx = 0;
 	while ((read_length = read(fd, buf, BUFFER_SIZE)))
 	{
-		//write(1, "test\n", 5);
 		buf[read_length] = '\0';
 		if (type_read == READ_VALIDATE)
 		{
@@ -127,16 +114,13 @@ void	ft_read_file(char *name, int type_read)
 			{
 				ft_putstr("Error validate.\n");
 				exit(0);
-				//return ;
 			}
 			if (read_length < BUFFER_SIZE)
 			{
 				if (g_size[1] != height)
 				{
-					////printf("%d %d\n", g_size[1], height);
 					ft_putstr("Error height.\n");
 					exit(0);
-					//return ;
 				}
 				g_size[0] = width;
 				g_size[1] = height;

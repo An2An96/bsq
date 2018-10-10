@@ -6,11 +6,12 @@
 # include <fcntl.h>
 # include <stdio.h>
 
+# include "utils.h"
+# include "bsq.h"
+
 # define BUFFER_SIZE    32
 # define READ_VALIDATE	0
 # define READ_CONSIDER	1
-
-# define END_ARRAY      (-65536)
 
 char	g_empty;
 char	g_obstacle;
@@ -21,6 +22,5 @@ int     g_size[2];
 int		*g_obstacle_map;
 
 void    ft_read_file(char *name, int type_read);
-void	ft_putstr(char *str);
 
 #endif
