@@ -28,3 +28,22 @@ void	ft_putstr(char *str)
 		a++;
 	}
 }
+
+int		ft_read_file(char *filename)
+{
+	int fd;
+
+	if ((fd = open(filename, O_RDONLY)) == -1)
+	{
+		ft_putstr("Error: could not open file \"");
+		ft_putstr(filename);
+		ft_putstr("\".\n");
+	}
+	return (fd);
+}
+
+void	ft_close_file(int fd)
+{
+	if (close(fd) == -1 && fd == 3)
+		ft_putstr("Failed closing");
+}

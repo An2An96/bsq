@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "bsq.h"
 
 void	ft_print_char(int is_obstacle, int is_square)
 {
 	if (is_obstacle)
-		ft_putchar('o');
+		ft_putchar(g_obstacle);
 	else if (is_square)
-		ft_putchar('x');
+		ft_putchar(g_full);
 	else
-		ft_putchar('.');
+		ft_putchar(g_empty);
 }
 
 void	ft_display_result(int *obstacle_map,

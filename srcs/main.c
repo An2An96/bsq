@@ -12,19 +12,39 @@
 
 #include "main.h"
 
-int	main(int argc, char **argv)
+void	ft_clear_global(void)
 {
+	if (g_obstacle_map)
+		free(g_obstacle_map);
+	g_obstacle_map = NULL;
+	g_nbr = 0;
+	g_size[0] = 0;
+	g_size[1] = 0;
+}
+
+int		main(int argc, char **argv)
+{
+	int i;
 	int square_start_pos;
 	int square_size;
 
+	ft_clear_global();
 	if (argc > 1)
 	{
-		ft_read_file(argv[1], READ_VALIDATE);
-		ft_read_file(argv[1], READ_CONSIDER);
-		square_size = ft_find_biggest_square(g_obstacle_map,
-			g_size, &square_start_pos);
-		ft_display_result(g_obstacle_map, g_size,
-			square_start_pos, square_size);
+		i = 1;
+		while (i < argc)
+		{
+			if (ft_read_file_validate(argv[i])
+				&& ft_read_file_consider(argv[i]))
+			{
+				square_size = ft_find_biggest_square(g_obstacle_map,
+					g_size, &square_start_pos);
+				ft_display_result(g_obstacle_map, g_size,
+					square_start_pos, square_size);
+				ft_clear_global();
+			}
+			i++;
+		}
 	}
 	return (0);
 }
