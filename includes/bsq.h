@@ -13,12 +13,18 @@
 #ifndef BSQ_H
 # define BSQ_H
 
+# include "utils.h"
+
 # define END_ARRAY      (-65536)
 # define BSQ_START		0
 # define BSQ_SIZE		1
 
 # define MIN(x, y)      (y ^ ((x ^ y) & -(x < y)))
 
+char	g_empty;
+char	g_obstacle;
+char	g_full;
+int		g_nbr;
 int		*g_obstacle_map;
 int		g_size[2];
 

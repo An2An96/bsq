@@ -20,15 +20,9 @@
 # include "utils.h"
 # include "bsq.h"
 
-# define BUFFER_SIZE    32
-# define READ_VALIDATE	0
-# define READ_CONSIDER	1
+# define BUF_SIZE    32 + 1
 
-char	g_empty;
-char	g_obstacle;
-char	g_full;
-int		g_nbr;
-
-void	ft_read_file(char *name, int type_read);
+int	ft_read_file_validate(char *filename);
+int	ft_read_file_consider(char *filename);
 
 #endif
