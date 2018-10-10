@@ -86,7 +86,6 @@ void	ft_read_obstacles_map(char *str, int *height, int *pos, int *map_idx)
 		{
 			if (str[i] == g_obstacle)
 			{
-				////printf("%d %d\n", *map_idx, *pos);
 				g_obstacle_map[(*map_idx)++] = *pos;
 			}
 			(*pos)++;
