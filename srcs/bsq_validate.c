@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "read.h"
+#include <stdio.h>
 
 int		ft_valid_first_line(char *str)
 {
@@ -25,6 +26,8 @@ int		ft_valid_first_line(char *str)
 		g_nbr += (int)str[i] - '0';
 		i++;
 	}
+	if (g_nbr <= 0)
+		return (0);
 	g_empty = str[i++];
 	g_obstacle = str[i++];
 	g_full = str[i++];
@@ -65,6 +68,7 @@ int		ft_validate(char *str, int *pos, int *obstacle_count, int end_line)
 	width_temp = (*pos);
 	while (str[i] != '\0')
 	{
+		write(1, &str[i], 1);
 		if (ft_valid_char(str[i], &obstacle_count, &width_temp) == 0)
 			return (0);
 		i++;
@@ -73,10 +77,7 @@ int		ft_validate(char *str, int *pos, int *obstacle_count, int end_line)
 	if (end_line)
 	{
 		if (g_size[1] != g_nbr)
-		{
-			ft_putstr("Error height.\n");
 			return (0);
-		}
 		g_obstacle_map = (int*)malloc(*obstacle_count + 1 * sizeof(int));
 	}
 	return (1);
@@ -99,7 +100,7 @@ int		ft_read_file_validate(char *filename)
 		buf[read_length] = '\0';
 		if (!ft_validate(buf, &pos, &obstacle_count, (read_length < BUF_SIZE)))
 		{
-			ft_putstr("Error validate.\n");
+			ft_putstr("map error\n");
 			return (0);
 		}
 	}
