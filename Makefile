@@ -11,7 +11,7 @@
 #******************************************************************************#
 
 NAME=bsq
-SRCS=srcs/main.c srcs/ft_putstr.c srcs/ft_validate.c srcs/ft_display_result.c srcs/ft_find_biggest_square.c
+SRCS=srcs/main.c srcs/utils.c srcs/ft_validate.c srcs/bsq_utils.c srcs/bsq_output.c srcs/bsq_main.c
 INCLUDES=includes
 
 all: $(NAME)

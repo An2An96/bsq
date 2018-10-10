@@ -12,7 +12,7 @@
 
 #include "bsq.h"
 
-int	ft_is_point_inside_square(int field_size[2],
+int		ft_is_point_inside_square(int field_size[2],
 	int point, int square_lu, int square_rd)
 {
 	int point_x;
@@ -30,7 +30,7 @@ int	ft_is_point_inside_square(int field_size[2],
 	return (0);
 }
 
-int	ft_reduce_square(int field_size[2],
+int		ft_reduce_square(int field_size[2],
 	int obstacle_pos, int start_pos, int *end_pos)
 {
 	int obstacle[2];
@@ -49,7 +49,7 @@ int	ft_reduce_square(int field_size[2],
 	return (diff);
 }
 
-int	ft_get_offset_right(int field_size[2], int obstacle_pos)
+int		ft_get_offset_right(int field_size[2], int obstacle_pos)
 {
 	int obstacle[2];
 
@@ -61,7 +61,7 @@ int	ft_get_offset_right(int field_size[2], int obstacle_pos)
 		return (-1);
 }
 
-int	ft_get_offset_down(int field_size[2], int obstacle_pos)
+int		ft_get_offset_down(int field_size[2], int obstacle_pos)
 {
 	int obstacle[2];
 
@@ -71,4 +71,14 @@ int	ft_get_offset_down(int field_size[2], int obstacle_pos)
 		return ((obstacle[1] + 1) * field_size[0]);
 	else
 		return (-1);
+}
+
+void	ft_set_biggest(int *biggest_size,
+	int *biggest_start, int cur_pos, int cur_size)
+{
+	if (cur_size > *biggest_size)
+	{
+		*biggest_size = cur_size;
+		*biggest_start = cur_pos;
+	}
 }

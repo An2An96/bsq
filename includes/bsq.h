@@ -14,9 +14,16 @@
 # define BSQ_H
 
 # define END_ARRAY      (-65536)
+# define BSQ_START		0
+# define BSQ_SIZE		1
 
 # define MIN(x, y)      (y ^ ((x ^ y) & -(x < y)))
 
+int		*g_obstacle_map;
+int		g_size[2];
+
+void	ft_set_biggest(int *biggest_size,
+	int *biggest_start, int cur_pos, int cur_size);
 int		ft_is_point_inside_square(int field_size[2],
 	int point, int square_lu, int square_rd);
 int		ft_reduce_square(int field_size[2],
@@ -25,6 +32,8 @@ int		ft_get_offset_right(int field_size[2], int obstacle_pos);
 int		ft_get_offset_down(int field_size[2], int obstacle_pos);
 void	ft_display_result(int *obstacle_map,
 	int field_size[2], int biggest_start, int biggest_size);
-int		ft_find_biggest_square(int *obstacle_map, int field_size[2]);
+int		ft_is_biggest_square(int *start_pos);
+int		ft_find_biggest_square(int *obstacle_map,
+	int field_size[2], int *biggest_start);
 
 #endif
