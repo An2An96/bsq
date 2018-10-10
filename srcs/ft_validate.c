@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_validate.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschuppe <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/10/10 19:05:31 by rschuppe          #+#    #+#             */
+/*   Updated: 2018/10/10 19:05:32 by rschuppe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "read.h"
 
-int	ft_valid_first_line(char *str)
+int		ft_valid_first_line(char *str)
 {
 	int i;
 
@@ -19,7 +31,7 @@ int	ft_valid_first_line(char *str)
 	return (str[i] == '\n' ? i + 1 : 0);
 }
 
-int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_count)
+int		ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_count)
 {
 	int i;
 	int width_temp;
@@ -67,15 +79,11 @@ void	ft_read_obstacles_map(char *str, int *height, int *pos, int *map_idx)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '\n')
-		{
 			(*height)++;
-		}
 		else if (*height > 0)
 		{
 			if (str[i] == g_obstacle)
-			{
 				g_obstacle_map[(*map_idx)++] = *pos;
-			}
 			(*pos)++;
 		}
 		i++;
@@ -124,7 +132,6 @@ void	ft_read_file(char *name, int type_read)
 				}
 				g_size[0] = width;
 				g_size[1] = height;
-				
 				g_obstacle_map = malloc(obstacle_count + 1 * sizeof(int));
 			}
 		}
