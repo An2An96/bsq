@@ -21,7 +21,7 @@ int	ft_valid_first_line(char *str)
 
 int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_count)
 {
-	//printf("ft_validate %s, height = %d\n", str, *height);
+	////printf("ft_validate %s, height = %d\n", str, *height);
 	int i;
 	int width_temp;
 
@@ -29,7 +29,7 @@ int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_coun
 	if (*pos == 0 && *height == 0)
 	{
 		i = ft_valid_first_line(str);
-		//printf("ft_valid_first_line return %d\n", i);
+		////printf("ft_valid_first_line return %d\n", i);
 		if (i == 0)
 		{
 			return (0);
@@ -38,14 +38,14 @@ int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_coun
 	width_temp = (*pos);
 	while (str[i] != '\0')
 	{
-		//printf("while %c\n", str[i]);
+		////printf("while %c\n", str[i]);
 		if (str[i] != '\n')
 		{
 			if (str[i] == g_obstacle)
 				obstacle_count++;
 			else if (str[i] != g_empty)
 			{
-				//printf("сань хуй соси\n");
+				////printf("сань хуй соси\n");
 				return (0);
 			}
 			width_temp++;
@@ -58,7 +58,7 @@ int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_coun
 			}
 			else if (width_temp != *width)
 			{
-				//printf("%d %d\n", width_temp, *width);
+				////printf("%d %d\n", width_temp, *width);
 				return (0);
 			}
 			width_temp = 0;
@@ -67,7 +67,7 @@ int	ft_validate(char *str, int *width, int *height, int *pos, int *obstacle_coun
 		i++;
 	}
 	(*pos) = width_temp;
-	printf("ft_valid_first_line, pos = %d\n", *pos);
+	//printf("ft_valid_first_line, pos = %d\n", *pos);
 	return (1);
 }
 
@@ -86,7 +86,7 @@ void	ft_read_obstacles_map(char *str, int *height, int *pos, int *map_idx)
 		{
 			if (str[i] == g_obstacle)
 			{
-				//printf("%d %d\n", *map_idx, *pos);
+				////printf("%d %d\n", *map_idx, *pos);
 				g_obstacle_map[(*map_idx)++] = *pos;
 			}
 			(*pos)++;
@@ -134,7 +134,7 @@ void	ft_read_file(char *name, int type_read)
 			{
 				if (g_size[1] != height)
 				{
-					//printf("%d %d\n", g_size[1], height);
+					////printf("%d %d\n", g_size[1], height);
 					ft_putstr("Error height.\n");
 					exit(0);
 					//return ;
