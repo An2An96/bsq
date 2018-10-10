@@ -68,7 +68,6 @@ void	ft_read_input(void)
 		buf[read_length] = '\0';
 		res = ft_strcat(res, buf);
 	}
-	write(1, "readed 0\n", 7);
 	if (res)
 		ft_read_input_map(res);
 }

@@ -68,7 +68,6 @@ int		ft_validate(char *str, int *pos, int *obstacle_count, int end_line)
 	width_temp = (*pos);
 	while (str[i] != '\0')
 	{
-		write(1, &str[i], 1);
 		if (ft_valid_char(str[i], &obstacle_count, &width_temp) == 0)
 			return (0);
 		i++;

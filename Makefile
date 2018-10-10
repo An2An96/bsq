@@ -11,7 +11,7 @@
 #******************************************************************************#
 
 NAME=bsq
-SRCS=srcs/main.c srcs/utils.c srcs/bsq_validate.c srcs/bsq_read_map.c srcs/bsq_utils.c srcs/bsq_output.c srcs/bsq_main.c
+SRCS=srcs/main.c srcs/utils.c srcs/ft_strcat.c srcs/bsq_validate.c srcs/bsq_read_map.c srcs/bsq_utils.c srcs/bsq_output.c srcs/bsq_main.c
 INCLUDES=includes
 
 all: $(NAME)

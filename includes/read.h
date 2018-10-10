@@ -22,7 +22,9 @@
 
 # define BUF_SIZE    32 + 1
 
-int	ft_read_file_validate(char *filename);
-int	ft_read_file_consider(char *filename);
+void	ft_read_obstacles_map(char *str, int read_params[2], int *map_idx);
+int		ft_validate(char *str, int *pos, int *obstacle_count, int end_line);
+int		ft_read_file_validate(char *filename);
+int		ft_read_file_consider(char *filename);
 
 #endif

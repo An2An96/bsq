@@ -21,5 +21,6 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 int		ft_read_file(char *filename);
 void	ft_close_file(int fd);
+char	*ft_strcat(char *dest, char *src);
 
 #endif

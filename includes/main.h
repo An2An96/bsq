@@ -19,4 +19,6 @@
 # include "utils.h"
 # include "bsq.h"
 
+char	*ft_strcat(char *dest, char *src);
+
 #endif
